@@ -43,4 +43,3 @@ STAHUJI DATA Z URL: https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=6&xn
 
 ### **Závěr**
 Tento projekt ukazuje základní schopnosti práce se scraperskými nástroji v Pythonu, včetně stahování dat z webu, jejich zpracování a ukládání do strukturovaného formátu (CSV). V budoucnu by bylo možné tento scraper upravit pro další volební obvody nebo jiné webové stránky s volebními výsledky.
-Tento obsah si můžeš jednoduše zkopírovat a vložit do souboru README.md pro svůj projekt na GitHubu.
