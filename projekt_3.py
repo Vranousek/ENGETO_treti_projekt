@@ -46,7 +46,6 @@ class ElectionScraper:
         if not soup:
             return None, None, None, {}
 
-    
         table = soup.find("table", {"id": "ps311_t1"})
         if not table:
             return 0, 0, 0, {}
@@ -59,7 +58,6 @@ class ElectionScraper:
         except (IndexError, ValueError):
             return 0, 0, 0, {}
 
-    
         parties = {}
         for row in soup.select("div.t2_470 table tr")[1:]:
             cols = row.find_all("td")
@@ -77,7 +75,6 @@ class ElectionScraper:
         if not soup:
             return None
 
-    
         precincts = soup.find_all("td", {"class": "cislo"})
         if precincts:
             total_registered = 0
@@ -133,11 +130,9 @@ class ElectionScraper:
                 results.append(data)
                 fieldnames.update(data.keys())
 
-        
         columns = ["code", "location", "registered", "envelopes", "valid"]
         columns += sorted([col for col in fieldnames if col not in columns])
 
-    
         with open(output_file, "w", newline="", encoding="utf-8-sig") as f:
             writer = csv.DictWriter(f, fieldnames=columns, delimiter=";")
             writer.writeheader()
